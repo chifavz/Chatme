@@ -1,10 +1,34 @@
-# Getting Started with Create React App
+# Chatme - Full-Stack Chatbot Application
+
+This project is a full-stack chatbot application built with React frontend and Express.js backend.
+
+## Features
+
+- Interactive chat interface with React frontend
+- Express.js backend with REST API
+- Intelligent chatbot responses (can be extended with AI/ML models)
+- Responsive design
+- Real-time communication between frontend and backend
+
+## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run dev`
+
+Runs both the frontend and backend simultaneously in development mode.
+- Frontend runs on [http://localhost:3000](http://localhost:3000)
+- Backend API runs on [http://localhost:5000](http://localhost:5000)
+
+This is the recommended way to run the full application during development.
+
+### `npm run server`
+
+Runs only the backend server on [http://localhost:5000](http://localhost:5000).
 
 ### `npm start`
 
@@ -38,6 +62,52 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Backend API
+
+The backend provides the following endpoints:
+
+### `POST /api/chatbot`
+
+Send a message to the chatbot and receive a response.
+
+**Request Body:**
+```json
+{
+  "input": "Your message here"
+}
+```
+
+**Response:**
+```json
+{
+  "response": "Chatbot response here"
+}
+```
+
+### `GET /api/health`
+
+Health check endpoint to verify the backend server is running.
+
+**Response:**
+```json
+{
+  "status": "Backend server is running!"
+}
+```
+
+## Project Structure
+
+```
+├── public/          # Static assets
+├── src/             # React frontend source code
+│   ├── Chatbot.js   # Main chatbot component
+│   ├── MessageInput.js  # Message input component
+│   ├── useChatMessages.js  # Message list component
+│   └── ...
+├── server.js        # Express.js backend server
+└── package.json     # Dependencies and scripts
+```
 
 ## Learn More
 
